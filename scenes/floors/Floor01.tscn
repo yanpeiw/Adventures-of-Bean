@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://floor01xxxx"]
+
+[ext_resource type="Script" uid="uid://cjkc67721r3am" path="res://scripts/ui/Floor01.gd" id="1_floor"]
+[ext_resource type="PackedScene" uid="uid://player00001" path="res://scenes/entities/Player.tscn" id="2_player"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_walltop"]
+size = Vector2(854, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wallbot"]
+size = Vector2(854, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wallleft"]
+size = Vector2(32, 480)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wallright"]
+size = Vector2(32, 480)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exit"]
+size = Vector2(60, 60)
+
+[node name="Floor01" type="Node2D" unique_id=1461519648]
+script = ExtResource("1_floor")
+
+[node name="Background" type="ColorRect" parent="." unique_id=502140510]
+offset_right = 854.0
+offset_bottom = 480.0
+color = Color(0.071, 0.059, 0.094, 1)
+
+[node name="WallTop" type="StaticBody2D" parent="." unique_id=1290705303]
+position = Vector2(427, 16)
+
+[node name="WallTopRect" type="ColorRect" parent="WallTop" unique_id=646550512]
+offset_left = -427.0
+offset_top = -16.0
+offset_right = 427.0
+offset_bottom = 16.0
+color = Color(0.149, 0.122, 0.192, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop" unique_id=404488173]
+shape = SubResource("RectangleShape2D_walltop")
+
+[node name="WallBottom" type="StaticBody2D" parent="." unique_id=1398532795]
+position = Vector2(427, 464)
+
+[node name="WallBottomRect" type="ColorRect" parent="WallBottom" unique_id=1184270592]
+offset_left = -427.0
+offset_top = -16.0
+offset_right = 427.0
+offset_bottom = 16.0
+color = Color(0.149, 0.122, 0.192, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom" unique_id=1852629028]
+shape = SubResource("RectangleShape2D_wallbot")
+
+[node name="WallLeft" type="StaticBody2D" parent="." unique_id=1480676874]
+position = Vector2(16, 240)
+
+[node name="WallLeftRect" type="ColorRect" parent="WallLeft" unique_id=253225895]
+offset_left = -16.0
+offset_top = -240.0
+offset_right = 16.0
+offset_bottom = 240.0
+color = Color(0.149, 0.122, 0.192, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft" unique_id=2035812823]
+shape = SubResource("RectangleShape2D_wallleft")
+
+[node name="WallRight" type="StaticBody2D" parent="." unique_id=132475624]
+position = Vector2(838, 240)
+
+[node name="WallRightRect" type="ColorRect" parent="WallRight" unique_id=685466187]
+offset_left = -16.0
+offset_top = -240.0
+offset_right = 16.0
+offset_bottom = 240.0
+color = Color(0.149, 0.122, 0.192, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight" unique_id=467499739]
+shape = SubResource("RectangleShape2D_wallright")
+
+[node name="Exit" type="Area2D" parent="." unique_id=1104438341]
+position = Vector2(790, 240)
+
+[node name="ExitRect" type="ColorRect" parent="Exit" unique_id=115475149]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(0.784, 0.573, 0.165, 1)
+
+[node name="ExitLabel" type="Label" parent="Exit" unique_id=307550953]
+offset_left = -40.0
+offset_top = -50.0
+offset_right = 40.0
+offset_bottom = -30.0
+text = "Exit"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=643748199]
+shape = SubResource("RectangleShape2D_exit")
+
+[node name="Player" parent="." unique_id=587949634 instance=ExtResource("2_player")]
+position = Vector2(120, 240)
+
+[node name="JoystickBase" type="Control" parent="." unique_id=1800448234]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="JoystickKnob" type="Control" parent="." unique_id=1500436207]
+visible = false
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1376687062]
+
+[node name="HUD" type="VBoxContainer" parent="UILayer" unique_id=545202572]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 200.0
+offset_bottom = 60.0
+
+[node name="FloorLabel" type="Label" parent="UILayer/HUD" unique_id=67460073]
+layout_mode = 2
+text = "Floor 1"
+
+[node name="HeartsLabel" type="Label" parent="UILayer/HUD" unique_id=1258639241]
+layout_mode = 2
+text = "Hearts: 5 / 5"

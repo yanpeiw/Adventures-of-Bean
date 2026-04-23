@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://n52d6oepmvbk"]
+
+[ext_resource type="Script" uid="uid://cmlc2w4mujbhn" path="res://scripts/ui/CharacterSelect.gd" id="1_cs"]
+
+[node name="CharacterSelect" type="Control" unique_id=189514694]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cs")
+
+[node name="Background" type="ColorRect" parent="." unique_id=255795856]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.031, 0.047, 0.055, 1)
+
+[node name="TopBar" type="HBoxContainer" parent="." unique_id=1521828681]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="BackButton" type="Button" parent="TopBar" unique_id=689925297]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Back"
+
+[node name="TitleLabel" type="Label" parent="TopBar" unique_id=954891923]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Choose Character"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharRow" type="HBoxContainer" parent="." unique_id=1240867500]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -120.0
+offset_right = 260.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="WarriorBtn" type="Button" parent="CharRow" unique_id=645664829]
+custom_minimum_size = Vector2(160, 200)
+layout_mode = 2
+text = "Warrior"
+
+[node name="HealerBtn" type="Button" parent="CharRow" unique_id=396550991]
+custom_minimum_size = Vector2(160, 200)
+layout_mode = 2
+text = "Healer"
+
+[node name="WizardBtn" type="Button" parent="CharRow" unique_id=1368315056]
+custom_minimum_size = Vector2(160, 200)
+layout_mode = 2
+text = "Wizard"

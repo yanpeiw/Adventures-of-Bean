@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://towersel001"]
+
+[ext_resource type="Script" path="res://scripts/ui/TowerSelect.gd" id="1_ts"]
+
+[node name="TowerSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ts")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.024, 0.020, 0.035, 1)
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="BackButton" type="Button" parent="TopBar"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 0)
+text = "Back"
+
+[node name="TitleLabel" type="Label" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Choose Your Tower"
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TowerRow" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = -150.0
+offset_right = 315.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="AshenBtn" type="Button" parent="TowerRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(190, 280)
+text = "The Ashen Keep"
+
+[node name="DrownedBtn" type="Button" parent="TowerRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(190, 280)
+text = "The Drowned Vaults"
+
+[node name="BrassBtn" type="Button" parent="TowerRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(190, 280)
+text = "The Brass Citadel"

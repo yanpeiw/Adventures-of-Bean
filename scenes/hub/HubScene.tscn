@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://cdqr7fh2wn01y"]
+
+[ext_resource type="Script" uid="uid://b4wlcdpuuke2j" path="res://scripts/ui/HubScene.gd" id="1_hub"]
+[ext_resource type="Texture2D" uid="uid://bkb01q75s4ner" path="res://art/characters/merchant/east.png" id="2_merchant"]
+[ext_resource type="Texture2D" uid="uid://ytmp1pdr20dm" path="res://art/hub/shrine.png" id="3_shrine"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gate"]
+size = Vector2(120, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shrine"]
+size = Vector2(72, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_merchant"]
+size = Vector2(48, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(32, 48)
+
+[node name="HubScene" type="Node2D" unique_id=856481740]
+script = ExtResource("1_hub")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1929087782]
+offset_right = 854.0
+offset_bottom = 1440.0
+mouse_filter = 2
+color = Color(0.039, 0.031, 0.063, 1)
+
+[node name="Gate" type="Area2D" parent="." unique_id=1111140596]
+position = Vector2(640, 300)
+
+[node name="GateRect" type="ColorRect" parent="Gate" unique_id=1303001735]
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+color = Color(0.784, 0.573, 0.165, 1)
+
+[node name="GateLabel" type="Label" parent="Gate" unique_id=1968547665]
+offset_left = -60.0
+offset_top = -90.0
+offset_right = 60.0
+offset_bottom = -60.0
+text = "The Gate"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gate" unique_id=2021910287]
+shape = SubResource("RectangleShape2D_gate")
+
+[node name="Shrine" type="Area2D" parent="." unique_id=447749009]
+position = Vector2(200, 150)
+
+[node name="ShrineSprite" type="Sprite2D" parent="Shrine" unique_id=1646561657]
+texture_filter = 1
+texture = ExtResource("3_shrine")
+
+[node name="ShrineLabel" type="Label" parent="Shrine" unique_id=382653691]
+offset_left = -50.0
+offset_top = -80.0
+offset_right = 50.0
+offset_bottom = -50.0
+text = "Shrine"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shrine" unique_id=1184322465]
+shape = SubResource("RectangleShape2D_shrine")
+
+[node name="Merchant" type="Area2D" parent="." unique_id=11266578]
+position = Vector2(200, 350)
+
+[node name="MerchantSprite" type="Sprite2D" parent="Merchant" unique_id=1662889916]
+texture_filter = 1
+texture = ExtResource("2_merchant")
+
+[node name="MerchantLabel" type="Label" parent="Merchant" unique_id=1543815779]
+offset_left = -50.0
+offset_top = -80.0
+offset_right = 50.0
+offset_bottom = -50.0
+text = "Merchant"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant" unique_id=1111236822]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_merchant")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1591707675]
+position = Vector2(100, 240)
+
+[node name="PlayerRect" type="ColorRect" parent="Player" unique_id=1707115215]
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 24.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1817716254]
+shape = SubResource("RectangleShape2D_player")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=85222216]
+zoom = Vector2(1.2, 1.2)
+limit_left = 0
+limit_top = 0
+limit_right = 854
+limit_bottom = 1440
+position_smoothing_enabled = true
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1537279146]
+
+[node name="JoystickBase" type="Control" parent="UILayer" unique_id=2146345882]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -140.0
+offset_right = 140.0
+offset_bottom = -20.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="JoystickKnob" type="Control" parent="UILayer" unique_id=155157946]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 370.0
+offset_right = 110.0
+offset_bottom = 430.0
+mouse_filter = 2
+
+[node name="InteractPrompt" type="Label" parent="UILayer" unique_id=1340499297]
+visible = false
+offset_right = 200.0
+offset_bottom = 30.0
+horizontal_alignment = 1

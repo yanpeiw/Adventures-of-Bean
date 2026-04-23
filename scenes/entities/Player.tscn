@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://player00001"]
+
+[ext_resource type="Script" path="res://scripts/player/Player.gd" id="1_player"]
+[ext_resource type="Texture2D" path="res://art/characters/wizard/south.png" id="2_south"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(20, 28)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_player")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_south")
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_player")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.2, 1.2)
+position_smoothing_enabled = true

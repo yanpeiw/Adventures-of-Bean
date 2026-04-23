@@ -1,0 +1,42 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="The Spire of Unending Ruin"
+run/main_scene="uid://bxmpk5jd4vq8n"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="res://icon.svg"
+config/run/main_scene="res://scenes/ui/MainMenu.tscn"
+
+[autoload]
+
+GameState="*res://scripts/autoloads/GameState.gd"
+
+[display]
+
+window/size/viewport_width=854
+window/size/viewport_height=480
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation="landscape"
+
+[gui]
+
+theme/custom="res://assets/theme.tres"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
